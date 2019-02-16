@@ -1,477 +1,59 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]>
-<html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]>
-<html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]>
-<html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html lang="en"> <!--<![endif]-->
+<html>
+
 <head>
-
-    <!-- Basic Page Needs
-  ================================================== -->
-    <meta charset="utf-8">
-    <title>Kura's artistry</title>
-    <meta name="description" content="Free Responsive Html5 Css3 Templates ">
-    <meta name="author" content="">
-
-    <!-- Mobile Specific Metas
-  ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!-- CSS
-  ================================================== -->
-    <link rel="stylesheet" href="css/zerogrid.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/responsiveslides.css">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery183.min.js"></script>
-    <script src="js/responsiveslides.min.js"></script>
-    <script>
-        // You can also use "$(window).load(function() {"
-        $(function () {
-            // Slideshow
-            $("#slider").responsiveSlides({
-                auto: true,
-                pager: false,
-                nav: true,
-                speed: 500,
-                namespace: "callbacks",
-                before: function () {
-                    $('.events').append("<li>before event fired.</li>");
-                },
-                after: function () {
-                    $('.events').append("<li>after event fired.</li>");
-                }
-            });
-        });
-    </script>
-
-    <!--[if lt IE 8]>
-    <div style=' clear: both; text-align:center; position: relative;'>
-        <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-            <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0"
-                 height="42" width="820"
-                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
-        </a>
-    </div>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <script src="js/html5.js"></script>
-    <script src="js/css3-mediaqueries.js"></script>
-    <![endif]-->
-
+	<meta charset='utf-8' />
+	<title>熊宝宝</title>
+	<meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+	/>
+	<meta name="renderer" content="webkit"/>
+	<meta name='apple-mobile-web-app-capable' content='yes' />
+	<meta name='full-screen' content='true' />
+	<meta name='x5-fullscreen' content='true' />
+	<meta name='360-fullscreen' content='true' />
+	<meta name="laya" screenorientation ="landscape"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta http-equiv='expires' content='0' />
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
 </head>
+
 <body>
-<div class="wrap-body">
+	<!--以下引用了常用类库，如果不使用，可以删除-->
+	
+    <!--核心包，封装了显示对象渲染，事件，时间管理，时间轴动画，缓动，消息交互,socket，本地存储，鼠标触摸，声音，加载，颜色滤镜，位图字体等-->
+	<script type="text/javascript" src="libs/laya.core.js"></script>
+	<!--提供了微信小游戏的适配-->
+	<script type="text/javascript" src="libs/laya.wxmini.js"></script>
+	<!--封装了webgl渲染管线，如果使用webgl渲染，可以在初始化时调用Laya.init(1000,800,laya.webgl.WebGL);-->
+    <script type="text/javascript" src="libs/laya.webgl.js"></script>
+	<!--是动画模块，包含了swf动画，骨骼动画等-->
+    <script type="text/javascript" src="libs/laya.ani.js"></script>
+	<!--包含更多webgl滤镜，比如外发光，阴影，模糊以及更多-->
+    <!--<script type="text/javascript" src="libs/laya.filter.js"></script>-->
+	<!--封装了html动态排版功能-->
+    <!--<script type="text/javascript" src="libs/laya.html.js"></script>-->
+	<!--粒子类库-->
+    <!--<script type="text/javascript" src="libs/laya.particle.js"></script>-->
+	<!--提供tileMap解析支持-->
+    <!--<script type="text/javascript" src="libs/laya.tiledmap.js"></script>-->
+	<!--提供了制作UI的各种组件实现-->
+    <script type="text/javascript" src="libs/laya.ui.js"></script>
+	<!-- 物理引擎matter.js -->
+	<!--用户自定义顺序文件添加到这里-->
+	<!--jsfile--Custom-->
+	<!--jsfile--Custom-->
 
-    <!--////////////////////////////////////Header-->
-    <header>
-        <div class="top-header">
-            <div class="zerogrid">
-                <nav id="menu-wrap">
-                    <div id="menu-trigger">Menu</div>
-                    <ul id="menu" style="display: none;">
-                        <li><a href="index.html">主页</a></li>
-                        <li>
-                            <a href="#">日志</a>
-                            <ul>
-                                <li>
-                                    <a href="#">旅行</a>
-                                </li>
-                                <li>
-                                    <a href="#">玩耍</a>
-                                </li>
-                                <li>
-                                    <a href="#">吃喝</a>
-                                    <ul>
-                                        <li><a href="#">吃</a></li>
-                                        <li><a href="#">喝</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">学习</a>
-                                    <ul>
-                                        <li><a href="#">不</a></li>
-                                        <li><a href="#">存</a></li>
-                                        <li><a href="#">在</a></li>
-                                        <li><a href="#">的</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="single.html">关于kura</a></li>
-                        <li><a href="contact.html">他的二维码</a></li>
-                        <li style="float:right !important">
-                            <form method="get" action="/search" id="search" class="f-right">
-                                <input name="q" type="text" size="40" placeholder=""/>
-                            </form>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="clearfix">
-            <div class="wrap-header">
-                <div class="row">
-                    <div class="col-full t-center">
-                        <div class="wrap-col">
-                            <div class="logo"><a href="#"><img src="images/logo.png"/></a></div>
-                            <div class="tagline">我，鸡神，打钱！</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+	<!--自定义的js(src文件夹下)文件自动添加到下面jsfile模块标签里面里-->
+	<!--删除标签，ide不会自动添加js文件，请谨慎操作-->
+	<!--jsfile--startTag-->
+	<script src="js/ui/layaUI.max.all.js"></script>
+	<script src="js/view/mainView.js"></script>
+	<!--jsfile--endTag-->
 
-            <div class="slider">
-                <div class="callbacks_container">
-                    <ul class="rslides" id="slider">
-                        <li>
-                            <img src="images/1.png" alt="">
-                        </li>
-                        <li>
-                            <img src="images/2.png" alt="">
-                        </li>
-                        <li>
-                            <img src="images/3.png" alt="">
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="container">
-        <div class="wrap-container">
-            <div class="zerogrid">
-                <div class="row">
-                    <div id="main-content" class="col-2-3">
-                        <div class="wrap-content">
-                            <div class="row">
-                                <article>
-                                    <div class="art-header">
-                                        <div class="entry-title">
-                                            <a href="#">灿烂的花</a>
-                                        </div>
-                                        <span>2017.10.7 night.</span>
-                                    </div>
-                                    <div class="art-content">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-                                                <img src="images/4.jpg"/>
-                                            </a>
-                                        </div>
-                                        <p>我不知道这个网页存在的意义，因为平时光发朋友圈就已经绞尽脑汁了。但是又有这么多模块，就随便放一些图片吧。</p>
-                                        <p>这是一年前在新疆的喀什老城艾提尕尔清真寺拍的照片，至今都觉得她们应该是我在旅行中遇到的最棒本地人了，虽然家门前才刚刚发生过暴乱，然后脸上的笑容却包容了一切。</p></p><div class="t-center"><a class="button button02" href="#">Read More</a></div>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="row">
-                                <article>
-                                    <div class="art-header">
-                                        <div class="entry-title">
-                                            <a href="#">半途</a>
-                                        </div>
-                                        <span>2017.10.7 night.</span>
-                                    </div>
-                                    <div class="art-content">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-                                                <img src="images/5.jpg"/>
-                                            </a>
-                                        </div>
-                                        <p>这张是在快要到达珠穆朗玛峰的途中所拍，两天的车程没有让我们失望，即便是稀薄的氧气也抵挡不住对你的热情。</p>
-                                        <div class="t-center"><a class="button button02" href="#">Read More</a></div>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="row">
-                                <div class="col-1-2">
-                                    <div class="wrap-col">
-                                        <article style="border:none;">
-                                            <div class="art-header">
-                                                <div class="entry-title">
-                                                    <a href="#">泰迪</a>
-                                                </div>
-                                                <span>2017.10.7 night.</span>
-                                            </div>
-                                            <div class="art-content">
-                                                <div class="zoom-container">
-                                                    <a href="single.html">
-                                                        <img src="images/6.jpg"/>
-                                                    </a>
-                                                </div>
-                                                <p>在零下近20°的哈尔滨，磊哥和娟儿姐店里来拍商品照的客人带来的蛋糕，不得不说，这应该是我吃过最好看又最难吃的蛋糕了。</p>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div class="col-1-2">
-                                    <div class="wrap-col">
-                                        <article style="border:none;">
-                                            <div class="art-header">
-                                                <div class="entry-title">
-                                                    <a href="#">笑笑姐</a>
-                                                </div>
-                                                <span>2017.10.7 night.</span>
-                                            </div>
-                                            <div class="art-content">
-                                                <div class="zoom-container">
-                                                    <a href="single.html">
-                                                        <img src="images/7.jpg"/>
-                                                    </a>
-                                                </div>
-                                                <p>苏州金鸡湖畔，大裤衩的对面，笑笑姐正在努力的证明自己的智商，认真的在填写一位8岁小朋友留下的题目。fighting！</p>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div class="col-1-2">
-                                    <div class="wrap-col">
-                                        <article style="border:none;">
-                                            <div class="art-header">
-                                                <div class="entry-title">
-                                                    <a href="#">知乎的第一次破K赞</a>
-                                                </div>
-                                                <span>2017.10.7 night.</span>
-                                            </div>
-                                            <div class="art-content">
-                                                <div class="zoom-container">
-                                                    <a href="single.html">
-                                                        <img src="images/8.jpg"/>
-                                                    </a>
-                                                </div>
-                                                <p>破乎居然让我突破1k👍了，虽然不知道赞的意义，但是就是很开心啊哈哈哈哈哈哈。</p>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div class="col-1-2">
-                                    <div class="wrap-col">
-                                        <article style="border:none;">
-                                            <div class="art-header">
-                                                <div class="entry-title">
-                                                    <a href="#">看，像不像哈士奇</a>
-                                                </div>
-                                                <span>2017.10.7 night.</span>
-                                            </div>
-                                            <div class="art-content">
-                                                <div class="zoom-container">
-                                                    <a href="single.html">
-                                                        <img src="images/9.jpg"/>
-                                                    </a>
-                                                </div>
-                                                <p>丽江大研古镇里认真的上班，认真的生活，认真的享受，但是真的好辛苦，应该比现在还要辛苦吧。</p>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="sidebar" class="col-1-3">
-                        <!---- Start Widget ---->
-                        <div class="widget wid-about">
-                            <div class="wid-header">
-                                <h5>关于kura</h5>
-                            </div>
-                            <div class="wid-content">
-                                <img src="images/10.jpg"/>
-                                <p>这是一只M78星云18号汪星于地球的外交官kura，38岁的它至今保持单身，平日里厚颜无耻但又充满了同情心，天天沉迷于吃鸡但技术又菜，如果你发现了它的优点麻烦及时通知我靴靴。
-                                    对了，steam账号是</p>
-                            </div>
-                        </div>
-                        <!---- Start Widget ---->
-                        <div class="widget wid-follow">
-                            <div class="wid-header">
-                                <h5>FOLLOW ME</h5>
-                            </div>
-                            <div class="wid-content">
-                                <ul class="quick-link">
-                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href=""><i class="fa fa-youtube"></i></a></li>
-                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href=""><i class="fa fa-github"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!---- Start Widget ---->
-                        <div class="widget wid-post">
-                            <div class="wid-header">
-                                <h4>关注它的人</h4>
-                            </div>
-                            <div class="wid-content">
-                                <div class="post">
-                                    <div class="zoom-container">
-                                        <a href="single.html">
-                                            <img src="images/11.jpg"/>
-                                        </a>
-                                    </div>
-                                    <div class="wrapper">
-                                        <h5 class="vid-name"><a href="#">青青</a></h5>
-                                        <div class="info">
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="post">
-                                    <div class="zoom-container">
-                                        <a href="bossB.html">
-                                            <img src="images/12.jpg"/>
-                                        </a>
-                                    </div>
-                                    <div class="wrapper">
-                                        <h5 class="vid-name"><a href="#">boss</a></h5>
-                                        <div class="info">
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="post">
-                                    <div class="zoom-container">
-                                        <a href="single.html">
-                                            <img src="images/13.jpg"/>
-                                        </a>
-                                    </div>
-                                    <div class="wrapper">
-                                        <h5 class="vid-name"><a href="#">徐哥</a></h5>
-                                        <div class="info">
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="post">
-                                    <div class="zoom-container">
-                                        <a href="single.html">
-                                            <img src="images/14.jpg"/>
-                                        </a>
-                                    </div>
-                                    <div class="wrapper">
-                                        <h5 class="vid-name"><a href="#">姐姐</a></h5>
-                                        <div class="info">
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="post">
-                                    <div class="zoom-container">
-                                        <a href="single.html">
-                                            <img src="images/11-1.jpg"/>
-                                        </a>
-                                    </div>
-                                    <div class="wrapper">
-                                        <h5 class="vid-name"><a href="#">宫本羽曦</a></h5>
-                                        <div class="info">
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!---- Start Widget ---->
-                        <div class="widget wid-category">
-                            <div class="wid-header">
-                                <h4>日志列表</h4>
-                            </div>
-                            <div class="wid-content">
-                                <ul>
-                                    <li><a href="#">吃喝</a></li>
-                                    <li><a href="#">玩耍</a></li>
-                                    <li><a href="#">旅行</a></li>
-                                    <li><a href="#">学习</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!---- Start Widget ---->
-                        <div class="widget wid-follow">
-                            <div class="wid-header">
-                                <h5>FOLLOW ME ON WECHAT (ID:skaurafan)</h5>
-                            </div>
-                            <div class="wid-content">
-                                <div class="row">
-                                    <div class="col-1-3">
-                                        <div class="wrap-col">
-                                            <a href="#"><img src="images/s.jpg"/></a>
-                                            <a href="#"><img src="images/u.jpg"/></a>
-                                            <a href="#"><img src="images/f.jpg"/></a>
-                                        </div>
-                                    </div>
-                                    <div class="col-1-3">
-                                        <div class="wrap-col">
-                                            <a href="#"><img src="images/k.jpg"/></a>
-                                            <a href="#"><img src="images/r.jpg"/></a>
-                                            <a href="#"><img src="images/a.jpg"/></a>
-                                        </div>
-                                    </div>
-                                    <div class="col-1-3">
-                                        <div class="wrap-col">
-                                            <a href="#"><img src="images/a.jpg"/></a>
-                                            <a href="#"><img src="images/a.jpg"/></a>
-                                            <a href="#"><img src="images/n.jpg"/></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="zerogrid">
-            <div class="wrap-footer t-center">
-                <div class="row">
-                    <div class="full">
-                        <ul class="quick-link">
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-youtube"></i></a></li>
-                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                            <li><a href=""><i class="fa fa-github"></i></a></li>
-                        </ul>
-                        <div class="copy-right">
-                            <p> 2017.10.7 night.          design by kura</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-    <script type="text/javascript">
-        $(function () {
-            if ($.browser.msie && $.browser.version.substr(0, 1) < 7) {
-                $('li').has('ul').mouseover(function () {
-                    $(this).children('ul').css('visibility', 'visible');
-                }).mouseout(function () {
-                    $(this).children('ul').css('visibility', 'hidden');
-                })
-            }
-
-            /* Mobile */
-            $("#menu-trigger").on("click", function () {
-                $("#menu").slideToggle();
-            });
-
-            // iPad
-            var isiPad = navigator.userAgent.match(/iPad/i) != null;
-            if (isiPad) $('#menu ul').addClass('no-transition');
-        });
-    </script>
-
-</div>
+	<!--启动类添加到这里-->
+	<!--jsfile--Main-->
+	<script src="js/LayaUISample.js"></script>
+	<!--jsfile--Main-->
 </body>
+
 </html>
