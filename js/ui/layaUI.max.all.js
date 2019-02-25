@@ -1,1 +1,147 @@
-var ui,__extends=this&&this.__extends||function(){var e=function(n,t){return(e=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,n){e.__proto__=n}||function(e,n){for(var t in n)n.hasOwnProperty(t)&&(e[t]=n[t])})(n,t)};return function(n,t){function o(){this.constructor=n}e(n,t),n.prototype=null===t?Object.create(t):(o.prototype=t.prototype,new o)}}(),View=laya.ui.View,Dialog=laya.ui.Dialog;!function(e){var n=function(n){function t(){return n.call(this)||this}return __extends(t,n),t.prototype.createChildren=function(){n.prototype.createChildren.call(this),this.createView(e.mainViewUI.uiView)},t.uiView={type:"View",props:{width:1924,height:1080},child:[{type:"Image",props:{skin:"comp/4题标记图.png"}},{type:"Image",props:{skin:"comp/bg_04.png"}},{type:"Image",props:{y:35,x:404,skin:"comp/sound.png"}},{type:"Image",props:{y:-1,x:578,skin:"comp/bgTxt_04.png"}},{type:"Animation",props:{y:492,x:320,source:"eye1.ani",interval:100,autoPlay:!0,autoAnimation:"ani1"}},{type:"Animation",props:{y:468,x:986,source:"eye2.ani",interval:80,autoPlay:!0,autoAnimation:"ani1"}},{type:"Box",props:{y:243,x:1553,width:176,var:"cookiesBox",height:598},child:[{type:"Image",props:{y:418,x:4,skin:"comp/cookies.png",name:"8"}},{type:"Image",props:{y:0,x:4,skin:"comp/cookies.png",name:"0"}},{type:"Image",props:{y:104,x:4,skin:"comp/cookies.png",name:"2"}},{type:"Image",props:{y:209,x:4,skin:"comp/cookies.png",name:"4"}},{type:"Image",props:{y:313,x:4,skin:"comp/cookies.png",name:"6"}},{type:"Image",props:{y:523,x:4,skin:"comp/cookies.png",name:"10"}},{type:"Image",props:{y:0,x:98,skin:"comp/cookies.png",name:"1"}},{type:"Image",props:{y:105,x:98,skin:"comp/cookies.png",name:"3"}},{type:"Image",props:{y:209,x:98,skin:"comp/cookies.png",name:"5"}},{type:"Image",props:{y:314,x:98,skin:"comp/cookies.png",name:"7"}},{type:"Image",props:{y:418,x:98,skin:"comp/cookies.png",name:"9"}}]},{type:"Image",props:{y:949,x:1781,var:"bu_right",skin:"comp/submitBtn.png"},compId:12}],animations:[{nodes:[{target:12,keyframes:{y:[{value:949,tweenMethod:"linearNone",tween:!0,target:12,key:"y",index:0},{value:480,tweenMethod:"linearNone",tween:!0,target:12,key:"y",index:25}],x:[{value:1781,tweenMethod:"linearNone",tween:!0,target:12,key:"x",index:0},{value:768,tweenMethod:"linearNone",tween:!0,target:12,key:"x",index:25}],scaleY:[{value:1,tweenMethod:"linearNone",tween:!0,target:12,key:"scaleY",index:0},{value:3,tweenMethod:"linearNone",tween:!0,target:12,key:"scaleY",index:25}],scaleX:[{value:1,tweenMethod:"linearNone",tween:!0,target:12,key:"scaleX",index:0},{value:3,tweenMethod:"linearNone",tween:!0,target:12,key:"scaleX",index:25}]}}],name:"ani1",id:1,frameRate:24,action:0}]},t}(View);e.mainViewUI=n}(ui||(ui={}));
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var View = laya.ui.View;
+var Dialog = laya.ui.Dialog;
+var ui;
+(function (ui) {
+    var game;
+    (function (game) {
+        var gameViewUI = /** @class */ (function (_super) {
+            __extends(gameViewUI, _super);
+            function gameViewUI() {
+                return _super.call(this) || this;
+            }
+            gameViewUI.prototype.createChildren = function () {
+                _super.prototype.createChildren.call(this);
+                this.createView(ui.game.gameViewUI.uiView);
+            };
+            gameViewUI.uiView = { "type": "View", "props": { "width": 750, "height": 1334 }, "child": [{ "type": "Image", "props": { "skin": "img/u4.jpg" } }, { "type": "Box", "props": { "y": 1170, "x": 49, "width": 114, "var": "bu_home", "height": 123 } }, { "type": "Box", "props": { "y": 1170, "x": 196, "width": 114, "var": "bu_rank", "height": 123 } }, { "type": "Box", "props": { "y": 1173, "x": 349, "width": 114, "var": "bu_shop", "height": 123 } }] };
+            return gameViewUI;
+        }(View));
+        game.gameViewUI = gameViewUI;
+    })(game = ui.game || (ui.game = {}));
+})(ui || (ui = {}));
+(function (ui) {
+    var game;
+    (function (game) {
+        var homeWinUI = /** @class */ (function (_super) {
+            __extends(homeWinUI, _super);
+            function homeWinUI() {
+                return _super.call(this) || this;
+            }
+            homeWinUI.prototype.createChildren = function () {
+                _super.prototype.createChildren.call(this);
+                this.createView(ui.game.homeWinUI.uiView);
+            };
+            homeWinUI.uiView = { "type": "Dialog", "props": { "y": 0, "x": 3, "width": 750, "height": 535 }, "child": [{ "type": "Image", "props": { "y": 0, "x": 0, "width": 750, "skin": "img/u5.png", "height": 536 } }] };
+            return homeWinUI;
+        }(Dialog));
+        game.homeWinUI = homeWinUI;
+    })(game = ui.game || (ui.game = {}));
+})(ui || (ui = {}));
+(function (ui) {
+    var game;
+    (function (game) {
+        var rankWinUI = /** @class */ (function (_super) {
+            __extends(rankWinUI, _super);
+            function rankWinUI() {
+                return _super.call(this) || this;
+            }
+            rankWinUI.prototype.createChildren = function () {
+                _super.prototype.createChildren.call(this);
+                this.createView(ui.game.rankWinUI.uiView);
+            };
+            rankWinUI.uiView = { "type": "Dialog", "props": { "width": 750, "height": 700 }, "child": [{ "type": "Image", "props": { "width": 750, "skin": "img/u6.png", "height": 700 } }] };
+            return rankWinUI;
+        }(Dialog));
+        game.rankWinUI = rankWinUI;
+    })(game = ui.game || (ui.game = {}));
+})(ui || (ui = {}));
+(function (ui) {
+    var game;
+    (function (game) {
+        var shopWinUI = /** @class */ (function (_super) {
+            __extends(shopWinUI, _super);
+            function shopWinUI() {
+                return _super.call(this) || this;
+            }
+            shopWinUI.prototype.createChildren = function () {
+                _super.prototype.createChildren.call(this);
+                this.createView(ui.game.shopWinUI.uiView);
+            };
+            shopWinUI.uiView = { "type": "Dialog", "props": { "width": 750, "height": 747 }, "child": [{ "type": "Image", "props": { "width": 750, "skin": "img/u7.png", "height": 747 } }] };
+            return shopWinUI;
+        }(Dialog));
+        game.shopWinUI = shopWinUI;
+    })(game = ui.game || (ui.game = {}));
+})(ui || (ui = {}));
+(function (ui) {
+    var login;
+    (function (login) {
+        var introduceViewUI = /** @class */ (function (_super) {
+            __extends(introduceViewUI, _super);
+            function introduceViewUI() {
+                return _super.call(this) || this;
+            }
+            introduceViewUI.prototype.createChildren = function () {
+                _super.prototype.createChildren.call(this);
+                this.createView(ui.login.introduceViewUI.uiView);
+            };
+            introduceViewUI.uiView = { "type": "View", "props": { "width": 750, "height": 1334 }, "child": [{ "type": "Image", "props": { "skin": "img/u3.png" } }, { "type": "Box", "props": { "y": 42, "x": -2, "width": 129, "var": "bu_return", "height": 88 } }, { "type": "Box", "props": { "y": 1179, "x": 168, "width": 409, "var": "bu_get", "height": 88 } }] };
+            return introduceViewUI;
+        }(View));
+        login.introduceViewUI = introduceViewUI;
+    })(login = ui.login || (ui.login = {}));
+})(ui || (ui = {}));
+(function (ui) {
+    var login;
+    (function (login) {
+        var item;
+        (function (item) {
+            var petSelectUI = /** @class */ (function (_super) {
+                __extends(petSelectUI, _super);
+                function petSelectUI() {
+                    return _super.call(this) || this;
+                }
+                petSelectUI.prototype.createChildren = function () {
+                    _super.prototype.createChildren.call(this);
+                    this.createView(ui.login.item.petSelectUI.uiView);
+                };
+                petSelectUI.uiView = { "type": "View", "props": { "width": 750, "height": 306 }, "child": [{ "type": "Image", "props": { "width": 750, "skin": "img/u2.png", "renderType": "render", "height": 304 } }] };
+                return petSelectUI;
+            }(View));
+            item.petSelectUI = petSelectUI;
+        })(item = login.item || (login.item = {}));
+    })(login = ui.login || (ui.login = {}));
+})(ui || (ui = {}));
+(function (ui) {
+    var login;
+    (function (login) {
+        var selectViewUI = /** @class */ (function (_super) {
+            __extends(selectViewUI, _super);
+            function selectViewUI() {
+                return _super.call(this) || this;
+            }
+            selectViewUI.prototype.createChildren = function () {
+                View.regComponent("t1.petSelect", t1.petSelect);
+                _super.prototype.createChildren.call(this);
+                this.createView(ui.login.selectViewUI.uiView);
+            };
+            selectViewUI.uiView = { "type": "View", "props": { "width": 750, "height": 1334 }, "child": [{ "type": "Image", "props": { "y": 0, "x": 0, "skin": "img/u0.jpg" } }, { "type": "List", "props": { "y": 235, "x": 0, "width": 786, "var": "list", "vScrollBarSkin": " ", "height": 910 }, "child": [{ "type": "petSelect", "props": { "runtime": "t1.petSelect", "renderType": "render" } }] }, { "type": "TextInput", "props": { "y": 148, "x": 164, "width": 400, "var": "input", "height": 62, "fontSize": 40 } }] };
+            return selectViewUI;
+        }(View));
+        login.selectViewUI = selectViewUI;
+    })(login = ui.login || (ui.login = {}));
+})(ui || (ui = {}));
+//# sourceMappingURL=layaUI.max.all.js.map
